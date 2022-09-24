@@ -7,3 +7,13 @@ th,td{
     text-align: center;
 }
 
+.badge{
+    font-size: 1.3em;
+}
+
+.shopping{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}

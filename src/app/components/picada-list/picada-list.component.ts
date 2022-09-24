@@ -1,3 +1,4 @@
+import { NumberSymbol } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Picada } from "./Picada";
 
@@ -14,8 +15,9 @@ export class PicadaListComponent implements OnInit {
       type : "01",
       price : 1,
       off : true,
-      stock : 100,
-      image : "assets/img/blonde.png",
+      stock : 5,
+      image : "./assets/img/blonde.png",
+      quantity : 0,
     },
     {
       name : "dos",
@@ -23,7 +25,9 @@ export class PicadaListComponent implements OnInit {
       price : 1,
       off : false,
       stock : 200,
-      image : "assets/img/blonde.png",
+      image : "./assets/img/blonde.png",
+      quantity : 0,
+
     },
     {
       name : "tres",
@@ -31,13 +35,31 @@ export class PicadaListComponent implements OnInit {
       price : 1,
       off : false,
       stock : 0,
-      image : "assets/img/blonde.png",
+      image : "./assets/img/blonde.png",
+      quantity : 0,
     }
   ];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  decreaseQuantity(picada : Picada ) : void{
+    if(picada.quantity > 0){
+      picada.quantity--;
+    }
+  }
+  upQuantity(picada : Picada ) : void{
+    if(picada.quantity < picada.stock){
+      picada.quantity++;
+    }
+  }
+
+  changeQuantity(event : KeyboardEvent, picada : Picada): void{
+    if(parseInt(event.key) >= 0 && parseInt(event.key)<=9){
+      console.log(event);
+    }
   }
 
 }

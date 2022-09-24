@@ -6,6 +6,7 @@
             <th>Precio</th>
             <th>Disponible</th>
             <th>Imagen</th>
+            <th>compra</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,16 @@
             </td>
             <td class="td-img-conteinter">
                 <img src={{picada.image}} alt="" class="beer-img">
+            </td>
+            <td>
+                <div class="shopping">
+                 <button type="button" class="btn btn-secondary" (click)="decreaseQuantity(picada)"><b>-</b></button>
+                 <span class="badge text-bg-success">{{picada.quantity}}</span>
+
+                 <input type="number" [(ngModel)]="picada.quantity" (keyup)="changeQuantity($event, picada)">
+
+                 <button type="button" class="btn btn-primary" (click)="upQuantity(picada)"><b>+</b></button>
+                </div>
             </td>
         </tr>
     </tbody>

@@ -4,5 +4,6 @@ export interface Picada{
     price: number,
     off: boolean,
     stock: number, 
-    image: string
+    image: string,
+    quantity: number
 }
