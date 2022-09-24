@@ -1,0 +1,26 @@
+<table class="table table-dark  table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Disponible</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let picada of picadas" [ngClass]="{'table-info': picada.off}">
+            <td>{{picada.name}}</td>
+            <td>{{picada.type}}</td>
+            <td>{{picada.price | currency}}</td>
+            <td>
+                <div class="alert alert-warning" role="alert" *ngIf="picada.stock == 0">
+                <b>Sin stock</b>
+                </div>
+            </td>
+            <td class="td-img-conteinter">
+                <img src={{picada.image}} alt="" class="beer-img">
+            </td>
+        </tr>
+    </tbody>
+</table>
