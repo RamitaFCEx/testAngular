@@ -23,9 +23,9 @@
                 <img src={{picada.image}} alt="" class="beer-img">
             </td>
             <td>
-                <div class="shopping">
+                <div class="shopping" *ngIf="picada.stock > 0">
                  <button type="button" class="btn btn-secondary" (click)="decreaseQuantity(picada)"><b>-</b></button>
-                 <span class="badge text-bg-success">{{picada.quantity}}</span>
+                 <!-- <span class="badge text-bg-success">{{picada.quantity}}</span> -->
 
                  <input type="number" [(ngModel)]="picada.quantity" (keyup)="changeQuantity($event, picada)">
 
