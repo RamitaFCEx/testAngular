@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
 import { PicadaListComponent } from './components/picada-list/picada-list.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { PicadaAboutComponent } from './components/picada-about/picada-about.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { HomeComponent } from './components/home/home.component';
+import { InputIntegerComponent } from './components/input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { ShopComponent } from './components/shop/shop.component';
     PicadaListComponent,
     CarritoComponent,
     PicadaAboutComponent,
-    ShopComponent
+    ShopComponent,
+    HomeComponent,
+    InputIntegerComponent,
   ],
   imports: [
     BrowserModule,

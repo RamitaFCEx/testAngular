@@ -1,0 +1,36 @@
+input{
+    width: 45px;
+}
+
+button + input {
+    height: 100%;
+}
+
+button.btn{
+    border-radius:  10px 0 0 10px;
+}
+
+input + button.btn{
+    border-radius:  0 10px 10px 0;
+}
+
+
+input::-webkit-outer-spin-button,/*SACA FLECHAS AL INPUT*/
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.shopping{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+

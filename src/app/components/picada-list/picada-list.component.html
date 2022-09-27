@@ -6,11 +6,11 @@
             <th>Precio</th>
             <th>Disponible</th>
             <th>Imagen</th>
-            <th>compra</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let picada of picadas" [ngClass]="{'table-info': picada.off}">
+        <tr *ngFor="let picada of picadas" [ngClass]="{'table-info': picada.off}" >
             <td>{{picada.name}}</td>
             <td>{{picada.type}}</td>
             <td>{{picada.price | currency}}</td>
@@ -23,14 +23,9 @@
                 <img src={{picada.image}} alt="" class="beer-img">
             </td>
             <td>
-                <div class="shopping" *ngIf="picada.stock > 0">
-                 <button type="button" class="btn btn-secondary" (click)="decreaseQuantity(picada)"><b>-</b></button>
-                 <!-- <span class="badge text-bg-success">{{picada.quantity}}</span> -->
-
-                 <input type="number" [(ngModel)]="picada.quantity" (keyup)="changeQuantity($event, picada)">
-
-                 <button type="button" class="btn btn-primary" (click)="upQuantity(picada)"><b>+</b></button>
-                </div>
+                <app-input-integer [(quantity)]="picada.quantity" [max]="picada.stock"  *ngIf="picada.stock > 0" (maxReached)="maxReached($event)"></app-input-integer>
+                <!-- <p>Cant: {{picada.quantity}}</p> -->
+                <p *ngIf="(picada.stock == picada.quantity) && (this.max === 'MAX') && (picada.stock != 0)">MAX</p>
             </td>
         </tr>
     </tbody>

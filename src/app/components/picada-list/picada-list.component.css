@@ -8,17 +8,7 @@ th,td{
     vertical-align: middle;
 }
 
-input{
-    max-width: 40px;
-}
-
-.badge{
-    font-size: 1.3em;
-}
-
-.shopping{
+app-input-integer{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    justify-content: center;
 }

@@ -9,6 +9,8 @@ import { Picada } from "./Picada";
 })
 export class PicadaListComponent implements OnInit {
 
+  max: string = "";
+
   picadas: Picada[] = [
     {
       name : "uno",
@@ -45,21 +47,10 @@ export class PicadaListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  decreaseQuantity(picada : Picada ) : void{
-    if(picada.quantity > 0){
-      picada.quantity--;
-    }
-  }
-  upQuantity(picada : Picada ) : void{
-    if(picada.quantity < picada.stock){
-      picada.quantity++;
-    }
+  maxReached(m : string){
+    console.log(m);
+    this.max = m;
   }
 
-  changeQuantity(event : KeyboardEvent, picada : Picada): void{
-    if(parseInt(event.key) >= 0 && parseInt(event.key)<=9){
-      console.log(event);
-    }
-  }
-
+ 
 }

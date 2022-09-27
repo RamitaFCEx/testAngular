@@ -1,0 +1,8 @@
+div.home-container img{
+    max-height: 87vh;
+}
+
+div.home-container{
+    min-height: 89.2vh;
+    text-align: center;
+}

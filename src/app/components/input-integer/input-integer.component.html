@@ -1,0 +1,10 @@
+<div class="shopping" >
+
+    <button type="button" class="btn btn-secondary" (click)="decreaseQuantity()">▼</button>
+    <!-- <span class="badge text-bg-success">{{picada.quantity}}</span> -->
+
+    <input type="number" [(ngModel)]="quantity" (keypress)="omit_special_char($event)" (keyup)="changeQuantity($event)">
+
+    <button type="button" class="btn btn-primary" (click)="upQuantity()">▲</button>
+
+</div>
