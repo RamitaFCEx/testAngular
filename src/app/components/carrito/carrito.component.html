@@ -1,1 +1,7 @@
-<div><img src={{carrito.img}} alt=""></div>
+<div>
+    <img src={{carrito.img}} alt="" id="carrito">
+    <ul>
+        <li *ngFor="let picada of cartList$ | async">{{picada.name}}  :  {{picada.quantity}} </li>
+    </ul>
+    
+</div>

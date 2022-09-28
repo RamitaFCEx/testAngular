@@ -7,6 +7,7 @@
             <th>Disponible</th>
             <th>Imagen</th>
             <th>Compra</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,9 @@
                 <app-input-integer [(quantity)]="picada.quantity" [max]="picada.stock"  *ngIf="picada.stock > 0" (maxReached)="maxReached($event)"></app-input-integer>
                 <!-- <p>Cant: {{picada.quantity}}</p> -->
                 <p *ngIf="(picada.stock == picada.quantity) && (this.max === 'MAX') && (picada.stock != 0)">MAX</p>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="addToCart(picada)">Agregar</button>
             </td>
         </tr>
     </tbody>

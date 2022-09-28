@@ -1,5 +1,6 @@
 import { NumberSymbol } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { PicadaCartService } from 'src/app/picada-cart.service';
 import { Picada } from "./Picada";
 
 @Component({
@@ -13,7 +14,7 @@ export class PicadaListComponent implements OnInit {
 
   picadas: Picada[] = [
     {
-      name : "uno",
+      name : "Blonde",
       type : "01",
       price : 1,
       off : true,
@@ -22,7 +23,7 @@ export class PicadaListComponent implements OnInit {
       quantity : 0,
     },
     {
-      name : "dos",
+      name : "Hell fire",
       type : "02",
       price : 1,
       off : false,
@@ -32,7 +33,7 @@ export class PicadaListComponent implements OnInit {
 
     },
     {
-      name : "tres",
+      name : "Criolla",
       type : "03",
       price : 1,
       off : false,
@@ -41,14 +42,23 @@ export class PicadaListComponent implements OnInit {
       quantity : 0,
     }
   ];
+  
 
-  constructor() { }
+  constructor(private cart : PicadaCartService) { 
+  }
 
   ngOnInit(): void {
   }
 
+  addToCart(picada : Picada): void{
+    if(picada.quantity > 0){
+      this.cart.addToCart(picada);
+      picada.stock -= picada.quantity;
+      picada.quantity = 0;
+    }
+  }
+
   maxReached(m : string){
-    console.log(m);
     this.max = m;
   }
 
