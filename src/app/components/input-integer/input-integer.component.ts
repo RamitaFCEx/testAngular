@@ -39,7 +39,7 @@ export class InputIntegerComponent implements OnInit {
 
   changeQuantity(event : KeyboardEvent): void{
     if(((parseInt(event.key) >= 0 && parseInt(event.key)<=9) && !(event.key==='e') )){
-      console.log(event);
+     // console.log(event);
       this.quantityChange.emit(this.quantity);
     }
   }

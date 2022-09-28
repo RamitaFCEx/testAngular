@@ -1,4 +1,4 @@
 .row{
-    min-height: 89.2vh;
     width: 100vw;
+    min-width: 1225px;
 }

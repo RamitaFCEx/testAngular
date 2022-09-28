@@ -3,3 +3,10 @@ footer{
     text-align: center;
 }
 
+div.container{
+    min-height: 89vh;
+}
+
+div.container div{
+    min-width: 1225px;
+}
